@@ -1,26 +1,27 @@
 body{
     margin:0;
     padding:0;
-    background-color:#7AA2BE;
+    background-color:#FFF;
     font-family: 'Lato', sans-serif;
     font-weight: 100;
     position:relative;
 }
 
 #topBar{
-    position:relative;
+    position:fixed;
     height:80px;
     background-color:#FFF;
     left:0;
     top:0;
     right:0;
+    z-index: 9999;
 }
 
 #menu{
     position:absolute;
     right:0px;
     height:100%;
-    width:450px;
+    width:403px;
     line-height:80px;
 }
 
@@ -41,37 +42,105 @@ body{
 
 #menu ul li{
     float: left;
-    margin-left:10px;
     letter-spacing:0.05em;
     font-size:13px;
     border-left:1px solid #7AA2BE;
     padding-left:10px;
+    padding-right:10px;
 }
 
-#menu ul li a{
+#menu ul a li{
     text-decoration: none;
     color:#000;
 }
 
-#menu ul li a:hover{
-    color:#999;
+#menu ul a li:hover{
+    background-color:#7AA2BE;
+    color:#FFF;
+}
+
+#contieneSecciones{
+    position:absolute;
+    top:79px;
+    left:0;
+    right:0;
 }
 
 .seccion{
-    border-top:1px solid #FFF;
-    left:50%;
-    margin-left:-300px;
     color:#FFF;
     font-size:15px;
-    width:600px;
-    position: relative;
-    margin-top:20px;
-    padding-top:20px;
+    position:absolute;
     text-align: center;
     letter-spacing:0.040em;
+    background-color:#7AA2BE;
+    left:0;
+    right:0;
 }
 
 .tituloSeccion{
     font-size:32px;
+}
+
+.textoSeccion{
+    max-width: 600px;
+    min-width: 300px;
+    position:absolute;
+    text-align: center;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    padding:30px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+#cover{
+    background: url(img/1.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.logoTri{
+    position:absolute;
+    width:370px;
+    height:370px;
+    background-image: url(img/1.jpg);
+    left:50%;
+    top:50%;
+    margin-left:-185px;
+    margin-top:-340px;
+}
+
+#tri1{
+-webkit-clip-path: polygon(21% 57%, 0% 100%, 100% 100%);
+clip-path: polygon(21% 57%, 0% 100%, 100% 100%);
+}
+
+#tri2{
+-webkit-clip-path: polygon(49% 0, 22% 55%, 72% 82%);
+clip-path: polygon(49% 0, 22% 55%, 72% 82%);
+}
+
+#tri3{
+-webkit-clip-path: polygon(52% 1%, 75% 84%, 99% 97%);
+clip-path: polygon(52% 1%, 75% 84%, 99% 97%);
+}
+
+#quienes{
+ -webkit-clip-path: polygon(50% 0%, 0% 20%, 0% 100%, 50% 80%, 100% 100%, 100% 20%);
+clip-path: polygon(50% 0%, 0% 20%, 0% 100%, 50% 80%, 100% 100%, 100% 20%);
+    border-bottom:2px solid #FFF;
+    background-color: #53768f;
+    z-index: 100;
+}
+
+#posQuienes{
+    background: url(img/2.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 

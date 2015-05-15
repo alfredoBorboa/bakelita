@@ -1,9 +1,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width maximum-scale=1.0">
 <link rel="stylesheet" href="resources/style.css" title="contemporary" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="resources/maximage/maximage.css">    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="resources/maximage/jquery.cycle.js"></script>
+<script src="resources/maximage/jquery.easing.js"></script>
+<script src="resources/maximage/maximage.js"></script>
 </head>
 <body>
     <div id="topBar">
@@ -12,20 +18,36 @@
     </div>
     <div id="menu">
     <ul>
-        <li><a href="javascript:void(0)">QUIÉNES SOMOS</a></li>
-        <li><a href="javascript:void(0)">SERVICIOS</a></li>
-        <li><a href="javascript:void(0)">GALERÍA</a></li>
-        <li><a href="javascript:void(0)">CONTACTO</a></li>
+        <a href="javascript:void(0)"><li>QUIÉNES SOMOS</li></a>
+        <a href="javascript:void(0)"><li>SERVICIOS</li></a>
+        <a href="javascript:void(0)"><li>GALERÍA</li></a>
+        <a href="javascript:void(0)"><li>CONTACTO</li></a>
     </ul>
     </div>
     </div>
     
-    <div class="seccion">
-        <span class="tituloSeccion">Quiénes somos</span><br><br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis lacus porta nisi accumsan, vitae dignissim lorem vestibulum. Aliquam tempor orci sed neque laoreet pellentesque. Donec dictum felis a accumsan commodo. Donec ultrices sem dui, quis euismod erat fermentum ac. Proin tristique est id massa consequat posuere. Integer aliquet rutrum felis vitae maximus. Proin interdum purus id ornare lacinia. Nulla facilisi. Integer quis nulla accumsan, malesuada felis facilisis, commodo velit. Sed sit amet lacus magna. Donec nisl arcu, tristique nec maximus ac, hendrerit sit amet quam.
+    <div id="contieneSecciones">
+    
+    <div class="seccion" id="cover">
+        <div class="logoTri" id="tri1">
+        </div>
+        <div class="logoTri" id="tri2">
+        </div>
+        <div class="logoTri" id="tri3">
+        </div>
     </div>
     
-        <div class="seccion">
+    <div class="seccion" id="quienes">
+        <div class="textoSeccion">
+        <span class="tituloSeccion">QUIÉNES SOMOS</span><br><br>
+        Somos una empresa 100% mexicana fundada en 1930. Nuestro compromiso con la calidad y la satisfacción del cliente, nos han llevado desde entonces a tener una amplia cartera de clientes nacionales e internacionales. <br><br>Pioneros en el moldeo de Bakelita en México, hemos mejorado dia a dia nuestros procesos y servicios, permitiéndonos así ofrecer productos de la mejor calidad en el mercado.
+        </div><!--textoSeccion-->
+    </div>
+        
+    <div class="seccion" id="posQuienes">
+        </div>
+    
+        <!--<div class="seccion">
         <span class="tituloSeccion">Servicios</span><br><br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis lacus porta nisi accumsan, vitae dignissim lorem vestibulum. Aliquam tempor orci sed neque laoreet pellentesque. Donec dictum felis a accumsan commodo. Donec ultrices sem dui, quis euismod erat fermentum ac. Proin tristique est id massa consequat posuere. Integer aliquet rutrum felis vitae maximus. Proin interdum purus id ornare lacinia. Nulla facilisi. Integer quis nulla accumsan, malesuada felis facilisis, commodo velit. Sed sit amet lacus magna. Donec nisl arcu, tristique nec maximus ac, hendrerit sit amet cdjndkjndk jquam.
     </div>
@@ -33,7 +55,43 @@
     <div class="seccion">
         <span class="tituloSeccion">Galería</span><br><br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis lacus porta nisi accumsan, vitae dignissim lorem vestibulum. Aliquam tempor orci sed neque laoreet pellentesque. Donec dictum felis a accumsan commodo. Donec ultrices sem dui, quis euismod erat fermentum ac. Proin tristique est id massa consequat posuere. Integer aliquet rutrum felis vitae maximus. Proin interdum purus id ornare lacinia. Nulla facilisi. Integer quis nulla accumsan, malesuada felis facilisis, commodo velit. Sed sit amet lacus magna. Donec nisl arcu, tristique nec maximus ac, hendrerit sit amet cdjndkjndk jquam.
-    </div>
+    </div>-->
+        
+    </div><!--contiene secciones-->
     
 </body>
+    <script type="text/javascript" charset="utf-8">
+        $( document ).ready(function(){
+            console.log( window.innerWidth );
+            
+            $("#contieneSecciones").css("height", (window.innerHeight - 80) * 4 );
+            $( ".seccion" ).css( "width", window.innerWidth );
+            $( ".seccion" ).css( "height", window.innerHeight + 80 );
+            $( "#quienes" ).css( "top", window.innerHeight + 80 - 250);
+            $( "#quienes" ).css( "paddingTop", $("#quienes").height() * 0.3);
+            $( "#quienes" ).css( "height", (window.innerHeight*0.5) + 80);
+            $(".logoTri").css("backgroundSize", "auto " + window.innerHeight + "px");
+            $(".logoTri").css("backgroundPosition", -(window.innerWidth/3) + "px " + -(window.innerHeight/4) + "px");
+            $( "#posQuienes" ).css( "top", (window.innerHeight*1.2) + 80 - 250);
+        });
+        
+        $( window ).resize(function(){
+           
+            $("#contieneSecciones").css("height", (window.innerHeight - 80) * 4 );
+            $( ".seccion" ).css( "width", window.innerWidth );
+            $( ".seccion" ).css( "height", window.innerHeight + 80 );
+            $( "#quienes" ).css( "top", window.innerHeight + 80 - 250);
+            $( "#quienes" ).css( "paddingTop", $("#quienes").height() * 0.3);
+            $( "#quienes" ).css( "height", (window.innerHeight*0.5) + 80);
+            $(".logoTri").css("backgroundSize", "auto " + window.innerHeight + "px");
+            $(".logoTri").css("backgroundPosition", -(window.innerWidth/3) + "px " + -(window.innerHeight/4) + "px");
+            $( "#posQuienes" ).css( "top", (window.innerHeight*1.2) + 80 - 250);
+        });
+        
+        $( window ).scroll(function() {
+            $(".logoTri").css("backgroundPosition",  -(window.innerWidth/3) + "px " + (-(window.innerHeight/4) - ($( window ).scrollTop() * 0.2)) + "px");
+            $(".logoTri").css("marginTop",  -340 + ($( window ).scrollTop() * 0.3) +  "px");
+            $("#quienes").css( "top", window.innerHeight + 80 - 250 - ($( window ).scrollTop() * 0.3) );
+        });
+</script>
 </html>
